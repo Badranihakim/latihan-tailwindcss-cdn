@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        darkMode:'class',
+        theme: {
+            extend: {
+                colors: {
+                    clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        #toggle:checked ~ label div.toggle-circle{
+            @apply translate-x-3;
+        }
+        body{
+            overflow-x: hidden;
+
+        }
+        </style>
+</head>
+<body class="dark:bg-slate-800 dark:text-slate-200">
+    <!-- <div class="flex justify-end mt-3 -mr-4 -mb-7 ">
+        <span class="text-sm text-slate-700 dark:text-slate-500 mr-2 "> </span>
+        <input type="checkbox" id="toggle" class="hidden" />
+        <label for="toggle">
+            <div class="w-9 h-5 bg-white rounded-full flex items-center p-1 cursor-pointer dark:bg-slate-500 border border-slate-400 shadow shadow-slate-400 dark:shadow dark:shadow-slate-400">
+                <div class="w-4 h-4 bg-slate-500 rounded-full toggle-circle dark:bg-white">
+                </div>
+            </div>
+        </label>
+        <span class="font-serif text-xs font-bold -ml-12 mt-[24px] mr-7">dark mode</span>
+    </div> -->
+
+    <h1 class="text-9xl text-center font-semibold font-mono">BELAJAR <span class="bg-gradient-to-br from-indigo-500 via bg-red-200 to-pink-400 bg-clip-text text-transparent">TailwindCSS</span></h1>
+    
+    <div class="bg-green-300 font-serif border-4 border-red-400 m-4 w-auto p-3 dark:text-slate-700"><span class="ml-9">Lorem ipsum dolor sit amet</span> consectetur adipisicing elit. Voluptatum nesciunt numquam vel suscipit autem. Praesentium, ipsam quia! Iure quae voluptatem porro, quam, consequatur delectus laboriosam reprehenderit ab eos veritatis sit, sint consectetur eius ut. Reiciendis illum accusantium fugit culpa provident rerum id sit odio alias, sapiente saepe iusto, autem, commodi dicta. Voluptates quae est eos accusantium reiciendis excepturi? Odit eaque magnam animi, ad consequatur architecto magni minus dolores! Odio alias totam et at sed, quis reiciendis praesentium amet asperiores corporis officia sequi nam dignissimos culpa quo expedita quia blanditiis temporibus unde nobis. Vel hic nisi voluptas asperiores reprehenderit, delectus quasi?</div>
+    
+    <div class="max-w-xl h-96 bg-[#bada55] bg-contain bg-no-repeat bg-center rounded-2xl border-8 border-[#f4796b] mx-auto mt-[50px]" style="background-image: url(./mobil.jpg)"></div>
+
+    <button class="mx-auto block mt-4 bg-sky-400 px-5 py-2 text-white font-bold rounded-full hover:bg-sky-600 active:bg-sky-700 focus:ring dark:bg-sky-600 dark:hover:bg-sky-400 focus:ring-red-400">Simpan</button>
+
+    <div class="max-w-lg mt-5 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-sans hover:bg-[#f4796b] group selection:bg-[#bada55] dark:shadow dark:shadow-slate-200">
+        <h5 class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white text-center dark:text-slate-200 dark:group-hover:text-slate-900 ">My Card</h5>
+        <p class="text-slate-600 group-hover:text-white  first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 text-justify dark:text-slate-200 dark:group-hover:text-slate-900">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam aliquam corrupti, nobis, similique obcaecati odit, modi eveniet nemo illum dignissimos perspiciatis quos officiis dolorum! Fugit quasi suscipit, obcaecati eius sit accusamus beatae minus ipsa aliquid dolor numquam! Id, cumque quo.</p>
+    </div>
+
+    <div class="max-w-lg mt-5 mb-5 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-sans dark:shadow dark:shadow-slate-200">
+        <form action="">
+            <label for="email">
+                <span class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-red-600 after:ml-0.5 dark:text-slate-200">Email</span>
+                <input type="email" id="email" placeholder="masukan email!" class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-red-600 invalid:focus:ring-red-400 invalid:focus:border-red-400 invalid:focus:bg-red-100 peer dark:bg-slate-300 dark:placeholder:text-slate-500">
+                <p class="text-sm text-red-500 invisible peer-invalid:visible peer-invalid:m-1 peer-invalid:-mb-1">Format email yang anda masukan salah...</p>
+            </label>
+        </form>
+    </div>
+
+    <div class="flex justify-center mt-3 -mr-4 mb-4 ">
+        <span class="text-sm text-slate-700 dark:text-slate-500 mr-2 ">light</span>
+        <input type="checkbox" id="toggle" class="hidden" />
+        <label for="toggle">
+            <div class="w-9 h-5 bg-white rounded-full flex items-center p-1 cursor-pointer dark:bg-slate-500 border border-slate-400 shadow shadow-slate-400 dark:shadow dark:shadow-slate-400">
+                <div class="w-4 h-4 -ml-[2px] dark:ml-0 bg-slate-500 rounded-full toggle-circle dark:bg-white">
+                </div>
+            </div>
+        </label>
+        <span class="text-sm text-slate-700 dark:text-slate-500 ml-2">dark</span>
+    </div>
+
+    <div class="mb-3"></div>
+
+    <script>
+        const checkbox = document.querySelector ('#toggle');
+        const html = document.querySelector('html');
+
+        checkbox.addEventListener('click', function(){
+            checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark');
+
+        });
+    </script>
+</body>
+</html>
